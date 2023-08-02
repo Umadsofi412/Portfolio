@@ -697,7 +697,7 @@ font-weight: var(--font-medium);
   text-align: center;
 }
 .project__bg{
-  background-color: var(--first-color);
+  background-color: var(--first-color-second);
   padding-top:3rem;
 }
 .project__title{
