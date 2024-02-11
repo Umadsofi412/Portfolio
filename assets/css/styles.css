@@ -172,6 +172,10 @@ img {
   background-color: var(--body-color);
 }
 
+.header{
+  background-color:var(--text-color-light);
+}
+
 /*==================== NAV ====================*/
 .nav{
   max-width: 969px;
@@ -188,7 +192,14 @@ img {
 .nav__logo:hover{
   color: var(--first-color);
 }
-
+  .nav__link{
+    padding: 1rem;
+  }
+  .nav__link:hover{
+    padding: 1rem;
+    background-color:var(--first-color);
+    color: #fff;
+  }
 .nav__toggle{
   font-size: 1.1rem;
   cursor: pointer;
@@ -227,6 +238,7 @@ img {
 }
 .nav__icon{
   font-size: 1.2rem;
+  padding: 4rem;
 }
 .nav_close{
   position: absolute;
@@ -745,6 +757,7 @@ font-weight: var(--font-medium);
 .education__icon-rocket{
   color: var(--first-color);
 }
+
 .education__container .swiper-pagination-education{
   bottom: 0;
 }
@@ -778,6 +791,16 @@ font-weight: var(--font-medium);
   font-size: var(--small-font-size);
   color: var(--text-color);
 } */
+.education__content{
+  padding: 2rem;
+  /* background-color: black ; */
+  margin: 2rem;
+  border-radius: 2rem;
+  font-family: var(--body-font);
+  box-shadow: 2rem;
+  font-size: var(--normal-font-size);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
 .contact__input{
   width: 100%;
   background-color: var(--input-color);
@@ -979,6 +1002,7 @@ font-weight: var(--font-medium);
     height: calc(var(--header-height) + 1.5rem);
     column-gap: 1rem;
   }
+  
   .nav__icon,
   .nav__toggle,
   .nav_close{
@@ -1094,6 +1118,25 @@ font-weight: var(--font-medium);
 
 /* For large devices */
 @media screen and ( min-width:1024px){
+  .video__overlap{
+    display: flex;
+    /* overflow: hidden; */
+    /* justify-content: center;
+    align-items: center; */
+
+  }
+  .video{
+    position: absolute;
+    opacity: 50%;
+  }
+  /* .nav__icon{
+    padding: 4rem;
+  }
+  .nav__icon:hover{
+    padding: 4rem;
+    background-color: ;
+  } */
+  
   .header,
   .main,
   .footer__container{

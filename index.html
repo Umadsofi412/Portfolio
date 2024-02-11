@@ -74,9 +74,13 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
-      <!--==================== HOME ====================-->
+      <!--==================== HOME ====================--> 
       <section class="home section" id="home">
+        <!-- <div class="video__overlap">
+        <video Autoplay loop muted class="video"
+        src="/assets/video/Video.mp4"></video> -->
         <div class="home__container container grid">
+          
           <div class="home__content grid">
             <div class="home__Social">
               <a
@@ -803,6 +807,7 @@
         <h2 class="section__title">My Education</h2>
         <span class="section__subtitle">Higher Education</span>
         <div class="education__container container swiper-container">
+          <marquee behavior="alternate" direction="left">
           <div class="swiper-wrapper">
             <!--==================== Education  1 ====================-->
             <div class="education__content swiper-slide">
@@ -814,7 +819,7 @@
                     class="education_img"
                   />
                   <div>
-                    <h3 class="education__name">J E T</h3>
+                    <h3 class="education__name">Jehlum Education Trust</h3>
                     <span class="education__student">Student</span>
                   </div>
                 </div>
@@ -841,7 +846,7 @@
                     class="education_img"
                   />
                   <div>
-                    <h3 class="education__name">GU</h3>
+                    <h3 class="education__name">Galgotias University</h3>
                     <span class="education__student">Student</span>
                   </div>
                 </div>
@@ -857,39 +862,15 @@
                 I have Completed my Graduation form Galgotias University
               </p>
             </div>
-            <!--==================== Education  3 ====================-->
-            <div class="education__content swiper-slide">
-              <div class="education__data">
-                <div class="education__header">
-                  <img
-                    src="/assets/img/testimonial3.jpg"
-                    alt=""
-                    class="education_img"
-                  />
-                  <div>
-                    <!-- this need to be changed -->
-                    <h3 class="education__name">Eva Nova</h3>
-                    <span class="education__student">Student</span>
-                  </div>
-                </div>
-                <div>
-                  <i class="uil uil-rocket education__icon-rocket"></i>
-                  <i class="uil uil-rocket education__icon-rocket"></i>
-                  <i class="uil uil-rocket education__icon-rocket"></i>
-                  <i class="uil uil-rocket education__icon-rocket"></i>
-                  <i class="uil uil-rocket education__icon-rocket"></i>
-                </div>
-              </div>
-              <p class="education__description">
-                I have done my b scooling.This was a great experince and having
-                a better.
-              </p>
-            </div>
           </div>
+        </marquee>
           <div class="swiper-pagination swiper-pagination-education"></div>
         </div>
       </section>
-
+      <!--==================== Audio Player ====================-->
+      <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+<div class="commonninja_component pid-2939f2d8-e217-4ba6-8ea1-17486dda9433"></div>
+      
       <!--==================== CONTACT ME ====================-->
       <section class="contact section" id="contact">
         <h2 class="section__title">Contact Me</h2>
