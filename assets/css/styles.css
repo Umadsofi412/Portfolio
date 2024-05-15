@@ -310,7 +310,7 @@ img {
 .home__data{
   grid-column: 1/3;
   background-color: var(--first-color-second);
-  padding: 1.4rem;
+  padding: 1.4 rem;
   border-radius: 0.8rem
 }
 .home__title{
