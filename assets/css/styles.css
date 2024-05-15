@@ -217,9 +217,9 @@ img {
     bottom: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--body-color);
+    background-color: #fff;
     padding: 2rem 1.5rem 4rem;
-    box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+    box-shadow: 0 -1px 4px rgba(0,0,0,0.2);
     border-radius: 1.5rem 1.5rem 0 0;
     transition: 0.3s;
   }
@@ -309,15 +309,15 @@ img {
 }
 .home__data{
   grid-column: 1/3;
-  background-color: var(--first-color-second);
+  /* background-color: var(--first-color-second); */
   padding: 1.4 rem;
   border-radius: 0.8rem
 }
 .home__title{
   font-size: var(--big-font-size);
-  /* padding: 1px 1px; */
-  /* background-color: var(--first-color); */
-  /* border-radius: 0.5rem; */
+  padding: 1px 1px; 
+  /* background-color: var(--first-color);
+  border-radius: 0.5rem; */
 }
 .home__subtitle{
   font-size: var(--h3-font-size);
@@ -772,6 +772,7 @@ font-weight: var(--font-medium);
 }
 .education__description{
   margin-bottom: var(--mb-2-5);
+  
 }
 .education__icon-rocket{
   color: var(--first-color);
@@ -779,6 +780,7 @@ font-weight: var(--font-medium);
 
 .education__container .swiper-pagination-education{
   bottom: 0;
+
 }
 /*==================== CONTACT ME ====================*/
 .contact__container{
@@ -810,16 +812,7 @@ font-weight: var(--font-medium);
   font-size: var(--small-font-size);
   color: var(--text-color);
 } */
-.education__content{
-  padding: 2rem;
-  /* background-color: black ; */
-  margin: 2rem;
-  border-radius: 2rem;
-  font-family: var(--body-font);
-  box-shadow: 2rem;
-  font-size: var(--normal-font-size);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-}
+
 .contact__input{
   width: 100%;
   background-color: var(--input-color);
