@@ -174,7 +174,8 @@ img {
 }
 
 .header{
-  background-color:var(--text-color-light);
+  background-color:#fff;
+  box-shadow: 0.5rem ;
 }
 
 /*==================== NAV ====================*/
@@ -196,14 +197,6 @@ img {
   .nav__link{
     padding: 1rem;
   }
-  .nav__link:hover{
-    padding: 1rem;
-    background-color:var(--first-color);
-    color: #fff;
-    box-shadow: 2rem;
-    border-radius: 10%;
-    transition: 2rem;
-  }
 .nav__toggle{
   font-size: 1.1rem;
   cursor: pointer;
@@ -217,11 +210,12 @@ img {
     bottom: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 2rem 1.5rem 4rem;
-    box-shadow: 0 -1px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 -1px 4px rgba(0,0,0,0.5);
     border-radius: 1.5rem 1.5rem 0 0;
     transition: 0.3s;
+
   }
   
 }
@@ -237,7 +231,14 @@ img {
   color: var(--title-color);
   font-weight: var(--font-medium);
   transition: 0.5s;
-
+}
+.nav__link:hover {
+    padding: 15px;
+    background-color: var(--first-color);
+    color: #fff;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    transition: 0.2rem;
 }
 /* .nav__link:hover{
   /* color: var(--first-color); */
@@ -257,6 +258,7 @@ img {
 }
 .nav_close:hover{
   color: var(--first-color-alt);
+
 }
 /* show menu */
 .show-menu{
@@ -1132,24 +1134,13 @@ font-weight: var(--font-medium);
 
 /* For large devices */
 @media screen and ( min-width:1024px){
-  .video__overlap{
-    display: flex;
-    /* overflow: hidden; */
-    /* justify-content: center;
-    align-items: center; */
-
-  }
-  .video{
-    position: absolute;
-    opacity: 50%;
-  }
-  /* .nav__icon{
+  .nav__icon{
     padding: 4rem;
   }
   .nav__icon:hover{
     padding: 4rem;
-    background-color: ;
-  } */
+    margin-bottom: 2rem;
+  }
   
   .header,
   .main,

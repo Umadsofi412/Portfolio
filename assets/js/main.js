@@ -124,7 +124,7 @@ let swiperEducation = new Swiper('.education__container', {
 const sections = document.querySelectorAll('section[id]')
 
 function scrollActive(){
-    const scrollY = window.pageYOffset
+    const scrollY = window.pageOffset
 
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight
@@ -137,8 +137,9 @@ function scrollActive(){
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
         }
     })
+    window.addEventListener("scroll", scrollActive);
 }
-window.addEventListener('scroll', scrollActive)
+
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
   const nav = document.getElementById('header')
