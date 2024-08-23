@@ -37,10 +37,29 @@ function toggleSkills() {
 
   for (i = 0; i < skillsContent.length; i++) {
     skillsContent[i].className = "skills__content skills__close";
+    resetSkills(skillsContent[i])
   }
   if (itemClass === "skills__content skills__close") {
     this.parentNode.className = "skills__content skills__open";
+    animateSkills(this.parentNode);
   }
+}
+
+function animateSkills(content) {
+  const skillBars = content.querySelectorAll(".skills__percentage");
+
+  skillBars.forEach((bar) => {
+    const percentage = bar.getAttribute("data-percentage");
+    bar.style.width = percentage; // Set the width based on the data attribute
+  });
+}
+
+function resetSkills(content) {
+  const skillBars = content.querySelectorAll(".skills__percentage");
+
+  skillBars.forEach((bar) => {
+    bar.style.width = "0"; // Reset the width to 0
+  })
 }
 
 skillsHeader.forEach((el) => {
@@ -121,25 +140,31 @@ let swiperEducation = new Swiper('.education__container', {
   keyboard: true,
 });
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('section[id]')
+const sections = document.querySelectorAll('section[id]');
 
 function scrollActive(){
-    const scrollY = window.pageOffset
+    const scrollY = window.pageYOffset;
 
-    sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+        const sectionId = current.getAttribute('id');
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        // Find the corresponding navigation link
+        const navLink = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+        
+        // Null check to prevent errors
+        if (navLink) {
+            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                navLink.classList.add('active-link');
+            } else {
+                navLink.classList.remove('active-link');
+            }
         }
-    })
-    window.addEventListener("scroll", scrollActive);
+    });
 }
 
+window.addEventListener("scroll", scrollActive);
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
   const nav = document.getElementById('header')
@@ -182,3 +207,84 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+let currentProjectNumber = 1;
+const maxProjectNumber = 5;
+const projectNumberElement = document.getElementById("number");
+
+function updateProjectNumber() {
+  projectNumberElement.classList.add("fade");
+
+  setTimeout(() => {
+    if (currentProjectNumber <= maxProjectNumber) {
+      projectNumberElement.textContent = currentProjectNumber;
+      projectNumberElement.classList.remove("fade");
+      currentProjectNumber++;
+    }
+  }, 500);
+}
+
+function startCounting() {
+  const intervalId = setInterval(() => {
+    if (currentProjectNumber <= maxProjectNumber) {
+      updateProjectNumber();
+    } else {
+      clearInterval(intervalId);
+    }
+  }, 100);
+}
+
+// Set up the observer
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startCounting();
+        observer.unobserve(entry.target); // Stop observing once animation starts
+      }
+    });
+  },
+  { threshold: 0.5 }
+); // Trigger when 50% of the section is visible
+
+// Observe the project section
+observer.observe(document.getElementById("about"));
+
+
+// hue adjuster 
+const hueInput = document.getElementById("hue-input");
+
+hueInput.addEventListener("input", function () {
+  const hueValue = hueInput.value;
+  document.documentElement.style.setProperty("--hue-color", hueValue);
+});
+
+
+/// for email
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the default form submission
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch("/send", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      if (response.ok) {
+        form.style.display = "none"; // Hide the form
+        document.getElementById("successMessage").style.display = "block"; // Show success message
+      } else {
+        alert("There was an error sending your message. Please try again.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("There was an error sending your message. Please try again.");
+    });
+});
+
+
+
+
+
