@@ -135,7 +135,9 @@ img {
 .section {
   padding: 2rem 0 4rem;
 }
-
+input[type = 'range']{
+  color: #fff;
+}
 .section__title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
