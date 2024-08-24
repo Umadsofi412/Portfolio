@@ -136,8 +136,11 @@ img {
   padding: 2rem 0 4rem;
 }
 input[type = 'range']{
-  color: #fff;
+  accent-color: var(--first-color);
+  width: 100%;
+  cursor: pointer;
 }
+
 .section__title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
@@ -1208,6 +1211,3 @@ font-weight: var(--font-medium);
 /* .HueAjuster{
   background-color: var(--first-color);
 } */
-#hue-input{
-  color: var(--first-color);
-}
