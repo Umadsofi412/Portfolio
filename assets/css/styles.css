@@ -1206,3 +1206,6 @@ font-weight: var(--font-medium);
 /* .HueAjuster{
   background-color: var(--first-color);
 } */
+#hue-input{
+  color: var(--first-color);
+}
