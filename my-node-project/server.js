@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
-
+require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -17,8 +17,8 @@ app.post("/send", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "ummadsofi@gmail.com",
-      pass: "vqdn mscy czfn yfpi",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
     },
   });
 
@@ -36,7 +36,8 @@ app.post("/send", (req, res) => {
     res.status(200).send("Message sent successfully");
   });
 });
+const PORT = process.env.PORT || 3000
 
-app.listen(3000, () => {
-  console.log("Server started on http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
