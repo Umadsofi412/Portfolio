@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
-require('dotenv').config();
+// require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
