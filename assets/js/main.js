@@ -83,6 +83,9 @@ tabs.forEach((tab) => {
     if (target.id === "work") {
       triggerWorkQualificationTransition();
     }
+    // if (target.id === "education") {
+    //     triggerEducationTransition();
+    // }
     tabs.forEach((tab) => {
       tab.classList.remove("qualification__active");
     });
@@ -334,98 +337,120 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
       alert("There was an error sending your message. Please try again.");
     });
 });
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  const firstRound = document.querySelectorAll(".qualification__round")[0];
-  const firstLine = document.querySelectorAll(".qualification__line")[0];
-  const firstContent = document.querySelector(".qualification__data");
+  function triggerEducationTransition() {
+    const firstRound = document.querySelectorAll(".qualification__round")[0];
+    const firstLine = document.querySelectorAll(".qualification__line")[0];
+    const firstContent = document.querySelector(".qualification__data");
 
-  const secondRound = document.querySelector(".qualification__round--second");
-  const secondLine = document.querySelector(".qualification__line--second");
-  const secondContent = document.querySelectorAll(".qualification__data")[1];
+    const secondRound = document.querySelector(".qualification__round--second");
+    const secondLine = document.querySelector(".qualification__line--second");
+    const secondContent = document.querySelectorAll(".qualification__data")[1];
 
-   const thirdRound = document.querySelector(".qualification__round--third");
-   const thirdLine = document.querySelector(".qualification__line--third");
-   const thirdContent = document.querySelectorAll(".qualification__data")[2];
+    const thirdRound = document.querySelector(".qualification__round--third");
+    const thirdLine = document.querySelector(".qualification__line--third");
+    const thirdContent = document.querySelectorAll(".qualification__data")[2];
 
-   const FourthRound = document.querySelector(".qualification__round--fourth");
-   const FourthLine = document.querySelector(".qualification__line--fourth");
-   const FourthContent = document.querySelectorAll(".qualification__data")[3];
+    const FourthRound = document.querySelector(".qualification__round--fourth");
+    const FourthLine = document.querySelector(".qualification__line--fourth");
+    const FourthContent = document.querySelectorAll(".qualification__data")[3];
 
-  // First Qualification
-  setTimeout(() => {
-    firstRound.classList.add("qualification__visible");
-    firstContent
-      .querySelector(".qualification__title")
-      .classList.add("qualification__visible");
-    firstContent
-      .querySelector(".qualification__subtitle")
-      .classList.add("qualification__visible");
-    firstContent
-      .querySelector(".qualification__calender")
-      .classList.add("qualification__visible");
-  }, 300);
-
-  setTimeout(() => {
-    firstLine.classList.add("qualification__visible"); // Trigger the line height transition
-  }, 900);
-
-  // Second Qualification
-  setTimeout(() => {
-    secondRound.classList.add("qualification__visible");
-    secondContent
-      .querySelector(".qualification__title")
-      .classList.add("qualification__visible");
-    secondContent
-      .querySelector(".qualification__subtitle")
-      .classList.add("qualification__visible");
-    secondContent
-      .querySelector(".qualification__calender")
-      .classList.add("qualification__visible");
-  }, 1500);
-
-  setTimeout(() => {
-    secondLine.classList.add("qualification__visible"); // Trigger the second line height transition
-  }, 2100);
-
-  // Thrid Qualification
-  setTimeout(() => {
-    thirdRound.classList.add("qualification__visible");
-    thirdContent
-      .querySelector(".qualification__title")
-      .classList.add("qualification__visible");
-    thirdContent
-      .querySelector(".qualification__subtitle")
-      .classList.add("qualification__visible");
-    thirdContent
-      .querySelector(".qualification__calender")
-      .classList.add("qualification__visible");
-  }, 2700);
-
-  setTimeout(() => {
-    thirdLine.classList.add("qualification__visible");
-  }, 3300);
-
-  
+    // First Qualification
     setTimeout(() => {
-      FourthRound.classList.add("qualification__visible");
-      FourthContent
+      firstRound.classList.add("qualification__visible");
+      firstContent
         .querySelector(".qualification__title")
         .classList.add("qualification__visible");
-      FourthContent
+      firstContent
         .querySelector(".qualification__subtitle")
         .classList.add("qualification__visible");
-      FourthContent
+      firstContent
+        .querySelector(".qualification__calender")
+        .classList.add("qualification__visible");
+    }, 300);
+
+    setTimeout(() => {
+      firstLine.classList.add("qualification__visible"); // Trigger the line height transition
+    }, 900);
+
+    // Second Qualification
+    setTimeout(() => {
+      secondRound.classList.add("qualification__visible");
+      secondContent
+        .querySelector(".qualification__title")
+        .classList.add("qualification__visible");
+      secondContent
+        .querySelector(".qualification__subtitle")
+        .classList.add("qualification__visible");
+      secondContent
+        .querySelector(".qualification__calender")
+        .classList.add("qualification__visible");
+    }, 1500);
+
+    setTimeout(() => {
+      secondLine.classList.add("qualification__visible"); // Trigger the second line height transition
+    }, 2100);
+
+    // Third Qualification
+    setTimeout(() => {
+      thirdRound.classList.add("qualification__visible");
+      thirdContent
+        .querySelector(".qualification__title")
+        .classList.add("qualification__visible");
+      thirdContent
+        .querySelector(".qualification__subtitle")
+        .classList.add("qualification__visible");
+      thirdContent
         .querySelector(".qualification__calender")
         .classList.add("qualification__visible");
     }, 2700);
 
+    setTimeout(() => {
+      thirdLine.classList.add("qualification__visible");
+    }, 3300);
+
+    // Fourth Qualification
+    setTimeout(() => {
+      FourthRound.classList.add("qualification__visible");
+      FourthContent.querySelector(".qualification__title").classList.add(
+        "qualification__visible"
+      );
+      FourthContent.querySelector(".qualification__subtitle").classList.add(
+        "qualification__visible"
+      );
+      FourthContent.querySelector(".qualification__calender").classList.add(
+        "qualification__visible"
+      );
+    }, 3900);
+
     // setTimeout(() => {
     //   FourthLine.classList.add("qualification__visible");
-    // }, 3300);
-});
+    // }, 4500);
+  }
+      function resetEducationTransition() {
+        const elements = document.querySelectorAll(
+          ".qualification__round, .qualification__line, .qualification__title, .qualification__subtitle, .qualification__calender"
+        );
+        elements.forEach((element) => {
+          element.classList.remove("qualification__visible");
+        });
+      }
+  // Trigger the transition when the page loads
+  triggerEducationTransition();
 
+  // Set up the event listener to trigger transition on tab click
+  const tabs = document.querySelectorAll("[data-target]");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = document.querySelector(tab.dataset.target);
+
+      // Check if the target tab is the Education section
+       if (target.id === "education") {
+         triggerEducationTransition();
+       } else {
+         // Reset the Education transitions when clicking away from the Education tab
+         resetEducationTransition();
+       }
+    });
+  });
+});

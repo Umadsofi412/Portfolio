@@ -223,6 +223,12 @@ input[type = 'range']{
   }
   
 }
+@media  (max-width:767px) {
+  .EducationContainer {
+      display: flex;
+      flex-direction: column;
+    }
+}
 .nav__list{
   grid-template-columns: repeat(3,1fr);
   gap: 2rem;
@@ -852,6 +858,8 @@ font-weight: var(--font-medium);
 /*==================== PROJECT IN MIND ====================*/
 .project{
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 .project__bg{
   background-color: var(--first-color-second);
@@ -869,14 +877,59 @@ font-weight: var(--font-medium);
   color: #fff;
 }
 .project__img{
-  width: 230px;
+  width: 450px;
   justify-self: center;
   height: 300px;
+  margin-bottom: 1rem;
+ 
+  /* position: relative; */
+}
+
+.rectangle-1{
+     
+      width: 100px;
+          height: 150px;
+          background-color: var(--first-color);
+          position: absolute;
+          z-index: 1;
+          /* opacity: 80%; */
+          bottom: 0;
+          transform: translate(400%,-30px) rotate(33.9deg);
+          filter: blur(60px);
+        
+}
+.rectangle-2 {
+
+  width: 100px;
+  height: 150px;
+  background-color: #f2f2f2;
+  position: absolute;
+  z-index: 0;
+  /* opacity: 80%; */
+  bottom: 0;
+  transform: translate(400%, -150px) rotate(33.9deg);
+  filter: blur(80px);
+
 }
 /*==================== TESTIMONIAL ====================*/
+
+.EducationContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:2rem
+}
+.education__contents{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 0.2rem;
+  margin: 4px;
+  border-radius: 0.5rem;
+}
 .education__data,
 .education__header{
   display: flex;
+  margin: 0.2rem;
+  gap: 7rem;
 }
 .education__data{
   justify-content: space-between;
@@ -898,7 +951,7 @@ font-weight: var(--font-medium);
 }
 .education__description{
   margin-bottom: var(--mb-2-5);
-  
+  margin: 0.5rem;
 }
 .education__icon-rocket{
   color: var(--first-color);
@@ -906,7 +959,6 @@ font-weight: var(--font-medium);
 
 .education__container .swiper-pagination-education{
   bottom: 0;
-
 }
 /*==================== CONTACT ME ====================*/
 .contact__container{
@@ -1053,8 +1105,16 @@ font-weight: var(--font-medium);
   .nav__link{
     color: var(--first-color);
   }
+     .EducationContainer {
+       display: flex;
+       flex-direction: column;
+     }
   .nav__list{
     column-gap: 0;
+  }
+  .project__container{
+    display: flex;
+    flex-direction: column;
   }
   .home__content{
     grid-template-columns: .25fr 3fr;
@@ -1080,6 +1140,7 @@ font-weight: var(--font-medium);
   }
   .project__img{
     width: 200px;
+   
   }
   .education__data,
   .education__header{
@@ -1117,7 +1178,7 @@ font-weight: var(--font-medium);
   .footer__container{
     grid-template-columns: repeat(2, 1fr);
   } 
-  
+    
   .qualification__sections{
     display: grid;
     grid-template-columns: .6fr;
