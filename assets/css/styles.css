@@ -224,10 +224,6 @@ input[type = 'range']{
   
 }
 @media  (max-width:767px) {
-  .EducationContainer {
-      display: flex;
-      flex-direction: column;
-    }
 }
 .nav__list{
   grid-template-columns: repeat(3,1fr);
@@ -326,8 +322,8 @@ input[type = 'range']{
     position: absolute;
     z-index: 1;
     /* opacity: 80%; */
-    bottom: 0;
-    transform: translate(-160%, -30px) rotate(10deg);
+    /* bottom: 0; */
+    transform: translate(-160%, 40px) rotate(10deg);
     filter: blur(80px);
 }
 .home__data{
@@ -914,12 +910,13 @@ font-weight: var(--font-medium);
 /*==================== TESTIMONIAL ====================*/
 
 .EducationContainer{
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
   justify-content: space-between;
   gap:2rem
 }
 .education__contents{
+  background-color: var(--first-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   padding: 0.2rem;
   margin: 4px;
@@ -946,12 +943,13 @@ font-weight: var(--font-medium);
   font-weight: var(--font-medium);
 }
 .education__student{
-  font-size: var(--small-font-size);  
-  color: var(--text-color-light);
+  font-size: var(--normal-font-size);  
+  color: var(--text-color);
 }
 .education__description{
   margin-bottom: var(--mb-2-5);
   margin: 0.5rem;
+  color: #fff;
 }
 .education__icon-rocket{
   color: var(--first-color);
@@ -1105,10 +1103,7 @@ font-weight: var(--font-medium);
   .nav__link{
     color: var(--first-color);
   }
-     .EducationContainer {
-       display: flex;
-       flex-direction: column;
-     }
+ 
   .nav__list{
     column-gap: 0;
   }
@@ -1116,8 +1111,13 @@ font-weight: var(--font-medium);
     display: flex;
     flex-direction: column;
   }
+  .rectangle{
+    position: absolute; 
+    transform: translate(-180%, 40px) rotate(10deg);
+  }
   .home__content{
     grid-template-columns: .25fr 3fr;
+    /* position: relative; */
   }
   .home__blob{
     width: 180px;
@@ -1178,7 +1178,10 @@ font-weight: var(--font-medium);
   .footer__container{
     grid-template-columns: repeat(2, 1fr);
   } 
-    
+         .EducationContainer {
+           display: flex;
+           flex-direction: row;
+         }
   .qualification__sections{
     display: grid;
     grid-template-columns: .6fr;
@@ -1337,7 +1340,10 @@ font-weight: var(--font-medium);
     padding: 4rem;
     margin-bottom: 2rem;
   }
-  
+  .EducationContainer{
+    display: flex;
+    flex-direction: row;
+  }
   .header,
   .main,
   .footer__container{
